@@ -15,6 +15,9 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
         }
+        .onAppear {
+            let d = RoundsDataProvider.getRounds(with: WordsLoader(), roundsCount: 10)
+        }
         .padding()
     }
 }

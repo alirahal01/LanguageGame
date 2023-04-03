@@ -15,6 +15,11 @@
 		9F9FCE9229DA1FA30014244E /* WordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE9129DA1FA30014244E /* WordGameUITests.swift */; };
 		9F9FCE9429DA1FA30014244E /* WordGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE9329DA1FA30014244E /* WordGameUITestsLaunchTests.swift */; };
 		9F9FCEA129DA1FBE0014244E /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F9FCEA029DA1FBE0014244E /* words.json */; };
+		9F9FCEB129DB60200014244E /* WordsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB029DB60200014244E /* WordsParser.swift */; };
+		9F9FCEB429DB60750014244E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB329DB60750014244E /* Word.swift */; };
+		9F9FCEB629DB61710014244E /* WordsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB529DB61710014244E /* WordsLoader.swift */; };
+		9F9FCEB829DB64F10014244E /* RoundDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB729DB64F10014244E /* RoundDataProvider.swift */; };
+		9F9FCEBA29DB65060014244E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB929DB65060014244E /* Round.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		9F9FCE9129DA1FA30014244E /* WordGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameUITests.swift; sourceTree = "<group>"; };
 		9F9FCE9329DA1FA30014244E /* WordGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F9FCEA029DA1FBE0014244E /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		9F9FCEB029DB60200014244E /* WordsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsParser.swift; sourceTree = "<group>"; };
+		9F9FCEB329DB60750014244E /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		9F9FCEB529DB61710014244E /* WordsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsLoader.swift; sourceTree = "<group>"; };
+		9F9FCEB729DB64F10014244E /* RoundDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDataProvider.swift; sourceTree = "<group>"; };
+		9F9FCEB929DB65060014244E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 		9F9FCE7529DA1FA20014244E /* WordGame */ = {
 			isa = PBXGroup;
 			children = (
+				9F9FCEB229DB60350014244E /* Models */,
+				9F9FCEAF29DB5E6E0014244E /* Services */,
 				9F9FCE7629DA1FA20014244E /* WordGameApp.swift */,
 				9F9FCE7829DA1FA20014244E /* ContentView.swift */,
 				9F9FCEA029DA1FBE0014244E /* words.json */,
@@ -128,6 +140,25 @@
 				9F9FCE9329DA1FA30014244E /* WordGameUITestsLaunchTests.swift */,
 			);
 			path = WordGameUITests;
+			sourceTree = "<group>";
+		};
+		9F9FCEAF29DB5E6E0014244E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F9FCEB029DB60200014244E /* WordsParser.swift */,
+				9F9FCEB529DB61710014244E /* WordsLoader.swift */,
+				9F9FCEB729DB64F10014244E /* RoundDataProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9F9FCEB229DB60350014244E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F9FCEB329DB60750014244E /* Word.swift */,
+				9F9FCEB929DB65060014244E /* Round.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9FCEB829DB64F10014244E /* RoundDataProvider.swift in Sources */,
 				9F9FCE7929DA1FA20014244E /* ContentView.swift in Sources */,
+				9F9FCEB429DB60750014244E /* Word.swift in Sources */,
+				9F9FCEB629DB61710014244E /* WordsLoader.swift in Sources */,
 				9F9FCE7729DA1FA20014244E /* WordGameApp.swift in Sources */,
+				9F9FCEBA29DB65060014244E /* Round.swift in Sources */,
+				9F9FCEB129DB60200014244E /* WordsParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,10 @@ struct WordGameApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(WordsGameStore(
+                    initial: WordsGameState(),
+                  reducer: wordsGameReducer
+                ))
         }
     }
 }

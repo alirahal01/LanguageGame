@@ -48,6 +48,12 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
         if mutatingState.currentRoundCount == mutatingState.roundsCount {
             mutatingState.gameState = .ended
         }
+    case .noAnswer:
+        mutatingState.currentRoundCount += 1
+        mutatingState.gameResults.noAnswers += 1
+        if mutatingState.currentRoundCount == mutatingState.roundsCount {
+            mutatingState.gameState = .ended
+        }
     }
     return mutatingState
 }

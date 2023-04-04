@@ -13,11 +13,9 @@ struct ContentView: View {
     var body: some View {
         switch store.state.gameState {
         case .started:
-            Text("Started")
-        case .won:
-            Text("Won")
-        case .title:
-            Text("Title")
+            GameScreenView()
+        case .ended:
+            GameEndedView()
         }
     }
 }

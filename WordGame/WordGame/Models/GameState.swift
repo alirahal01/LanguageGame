@@ -8,5 +8,5 @@
 import Foundation
 
 enum GameState {
-    case started, won, title
+    case started, ended
 }

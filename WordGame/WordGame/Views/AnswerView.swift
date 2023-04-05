@@ -20,17 +20,12 @@ struct AnswerView: View {
                         .fill(Color.red)
                         .frame(width: 150, height: 150)
                         .cornerRadius(12)
-                    VStack {
-                        Spacer()
-                        if let round = store.state.currentRound {
-                            Text(round.answer)
-                                .font(.title)
-                                .foregroundColor(.white)
-                                .padding(10)
-                                .minimumScaleFactor(0.05)
-                        }
-                        
-                        Spacer()
+                    if let round = store.state.currentRound {
+                        Text(round.answer)
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .minimumScaleFactor(0.05)
                     }
                 }
                 .offset(x: store.state.moveAnswer ? geometry.size.width - 150 : 0)

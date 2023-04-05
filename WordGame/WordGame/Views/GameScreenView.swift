@@ -29,10 +29,7 @@ struct GameScreenView: View {
                 .animation(nil)
                 
                 Spacer()
-                if let round = store.state.currentRound {
-                    Text(round.question)
-                        .animation(nil)
-                }
+                QuestionView()
                 Spacer()
                 AnswerView(screenSize: reader.size.width)
                 Spacer()

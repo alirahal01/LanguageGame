@@ -10,36 +10,37 @@ import Combine
 
 struct AnswerView: View {
     @EnvironmentObject var store: WordsGameStore
-    @Binding var timeRemaining: TimeInterval
     
     var body: some View {
-        if let round = store.state.currentRound {
-            Text(round.answer)
-                .animation(.easeOut)
-                .onChange(of: timeRemaining, perform: { timeRemaining in
-                    withAnimation(.linear(duration: 5)) {
-                        if timeRemaining > 0 {
-//                            self.timeRemaining -= 1
-                            store.dispatch(.startMovingAnswer)
-                        } else {
-//                            self.timeRemaining = 5
-                            store.dispatch(.noAnswer)
-                        }
-                    }
-                })
-                .offset(x: store.state.moveAnswer ? 150 : -150)
-            
+        ZStack {
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 150, height: 150)
+                .cornerRadius(12)
+            VStack {
+                Spacer()
+                if let round = store.state.currentRound {
+                    Text(round.answer)
+                        .font(.title)
+                        .foregroundColor(.blue)
+                }
+                
+                Spacer()
+            }
         }
+        .offset(x: store.state.moveAnswer ? 100 : -150)
+        .shadow(radius: 8)
+        
     }
 }
-    
-    struct AnswerView_Previews: PreviewProvider {
-        @State static var timeRemaining = 5.0
-        static var previews: some View {
-            AnswerView(timeRemaining: $timeRemaining)
-                .environmentObject(WordsGameStore(
-                    initial: WordsGameState(),
-                    reducer: wordsGameReducer
-                ))
-        }
+
+struct AnswerView_Previews: PreviewProvider {
+    @State static var timeRemaining = 5.0
+    static var previews: some View {
+        AnswerView()
+            .environmentObject(WordsGameStore(
+                initial: WordsGameState(),
+                reducer: wordsGameReducer
+            ))
     }
+}

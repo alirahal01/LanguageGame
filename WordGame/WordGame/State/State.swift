@@ -9,20 +9,27 @@ import Foundation
 
 struct WordsGameState {
     var gameState: GameState = .started
-    var rounds: Rounds = []
-    var roundsCount: Int = 5
-    var currentRoundCount = 0
-    var roundTime: TimeInterval = 5
+    
+    
+    
     var gameResults: GameResults = GameResults.empty
     var moveAnswer = false
+    
+    var rounds: Rounds = []
+    var roundsCount: Int = 20
+    var currentRoundCount = 0
     var currentRound: Round? {
         if rounds.count > 0 && currentRoundCount < roundsCount {
             return rounds[currentRoundCount]
         } else {
             return nil
         }
-        
     }
+    
+    var roundTime: TimeInterval = 5
+    var roundTimeRemaining = 0
+    
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 }
 
 struct GameResults {

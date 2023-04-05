@@ -14,7 +14,8 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
     switch action {
         
     case .startGame:
-        let rounds = RoundsDataProvider.getRounds(with: WordsLoader(), roundsCount: 5)
+        let rounds = RoundsDataProvider.getRounds(with: WordsLoader(), roundsCount: state.roundsCount)
+        mutatingState.roundTimeRemaining = Int(mutatingState.roundTime)
         mutatingState.rounds = rounds
         mutatingState.gameResults = .empty
         mutatingState.currentRoundCount = 0
@@ -48,6 +49,7 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
             mutatingState.gameState = .ended
         }
     case .noAnswer:
+        mutatingState.roundTimeRemaining = Int(mutatingState.roundTime)
         mutatingState.currentRoundCount += 1
         mutatingState.moveAnswer = false
         mutatingState.gameResults.noAnswers += 1
@@ -56,6 +58,7 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
         }
     case .startMovingAnswer:
         mutatingState.moveAnswer = true
+        mutatingState.roundTimeRemaining -= 1
     }
     return mutatingState
 }

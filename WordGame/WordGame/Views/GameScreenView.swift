@@ -16,9 +16,7 @@ extension AnyTransition {
 }
 struct GameScreenView: View {
     @EnvironmentObject var store: WordsGameStore
-    @State private var roundTimeRemaining = 5.0
-    
-    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+//    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
@@ -35,12 +33,7 @@ struct GameScreenView: View {
                     .animation(nil)
             }
             Spacer()
-//            AnswerView(timeRemaining: $roundTimeRemaining)
-            if let round = store.state.currentRound {
-                Text(round.answer)
-                    .animation(.easeOut)
-                    .offset(x: store.state.moveAnswer ? 150 : -150)
-            }
+            AnswerView()
             Spacer()
             HStack {
                 Spacer()
@@ -59,15 +52,13 @@ struct GameScreenView: View {
             }
             
         }
-        .onReceive(timer, perform: { time in
-                if roundTimeRemaining > 0 {
-                    withAnimation(.linear(duration: 5)) {
-                        roundTimeRemaining -= 1
+        .onReceive(store.state.timer, perform: { time in
+            if store.state.roundTimeRemaining > 0 {
+                withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
                         store.dispatch(.startMovingAnswer)
                     }
                     
                 } else {
-                    roundTimeRemaining = 5
                     store.dispatch(.noAnswer)
                 }
         })

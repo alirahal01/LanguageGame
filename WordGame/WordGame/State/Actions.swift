@@ -14,4 +14,5 @@ enum WordsGameAction {
     case correctPressed
     case wrongPressed
     case noAnswer
+    case startMovingAnswer
 }

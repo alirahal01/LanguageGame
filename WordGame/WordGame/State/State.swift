@@ -14,6 +14,7 @@ struct WordsGameState {
     var currentRoundCount = 0
     var roundTime: TimeInterval = 5
     var gameResults: GameResults = GameResults.empty
+    var moveAnswer = false
     var currentRound: Round? {
         if rounds.count > 0 && currentRoundCount < roundsCount {
             return rounds[currentRoundCount]

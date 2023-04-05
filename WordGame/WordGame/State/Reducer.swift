@@ -24,8 +24,8 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
     case .winGame:
         mutatingState.gameState = .ended
     case .correctPressed:
-        
         mutatingState.currentRoundCount += 1
+        mutatingState.moveAnswer = false
         guard let currentRound = state.currentRound else { return mutatingState }
         if currentRound.isTranslationCorrect {
             mutatingState.gameResults.rightAnswers += 1
@@ -35,11 +35,10 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
         if mutatingState.currentRoundCount == mutatingState.roundsCount {
             mutatingState.gameState = .ended
         }
-        
     case .wrongPressed:
-        
         guard let currentRound = state.currentRound else { return mutatingState }
         mutatingState.currentRoundCount += 1
+        mutatingState.moveAnswer = false
         if currentRound.isTranslationCorrect {
             mutatingState.gameResults.wrongAnswers += 1
         } else {
@@ -50,10 +49,13 @@ let wordsGameReducer: Reducer<WordsGameState, WordsGameAction> = { state, action
         }
     case .noAnswer:
         mutatingState.currentRoundCount += 1
+        mutatingState.moveAnswer = false
         mutatingState.gameResults.noAnswers += 1
         if mutatingState.currentRoundCount == mutatingState.roundsCount {
             mutatingState.gameState = .ended
         }
+    case .startMovingAnswer:
+        mutatingState.moveAnswer = true
     }
     return mutatingState
 }

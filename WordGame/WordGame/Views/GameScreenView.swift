@@ -7,22 +7,39 @@
 
 import SwiftUI
 
+extension AnyTransition {
+    static var wordTextTransition: AnyTransition {
+        let insertion = AnyTransition.move(edge: .leading)
+        let removal = AnyTransition.scale
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
 struct GameScreenView: View {
     @EnvironmentObject var store: WordsGameStore
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State private var roundTimeRemaining = 5.0
+    
+    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
-            Text("Right Answers: \(store.state.gameResults.rightAnswers)")
-            Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
-            Text("No Answers: \(store.state.gameResults.noAnswers)")
+            Group {
+                Text("Right Answers: \(store.state.gameResults.rightAnswers)")
+                Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
+                Text("No Answers: \(store.state.gameResults.noAnswers)")
+            }
+            .animation(nil)
+            
             Spacer()
             if let round = store.state.currentRound {
                 Text(round.question)
+                    .animation(nil)
             }
             Spacer()
+//            AnswerView(timeRemaining: $roundTimeRemaining)
             if let round = store.state.currentRound {
-                Text(String(round.isTranslationCorrect))
+                Text(round.answer)
+                    .animation(.easeOut)
+                    .offset(x: store.state.moveAnswer ? 150 : -150)
             }
             Spacer()
             HStack {
@@ -40,9 +57,19 @@ struct GameScreenView: View {
                 }
                 Spacer()
             }
+            
         }
-        .onReceive(timer, perform: { input in
-            store.dispatch(.noAnswer)
+        .onReceive(timer, perform: { time in
+                if roundTimeRemaining > 0 {
+                    withAnimation(.linear(duration: 5)) {
+                        roundTimeRemaining -= 1
+                        store.dispatch(.startMovingAnswer)
+                    }
+                    
+                } else {
+                    roundTimeRemaining = 5
+                    store.dispatch(.noAnswer)
+                }
         })
         .onAppear {
             store.dispatch(.startGame)

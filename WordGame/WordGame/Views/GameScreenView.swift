@@ -21,6 +21,7 @@ struct GameScreenView: View {
     var body: some View {
         GeometryReader { reader in
             VStack {
+                Spacer()
                 Group {
                     Text("Right Answers: \(store.state.gameResults.rightAnswers)")
                     Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
@@ -35,19 +36,12 @@ struct GameScreenView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button {
-                        self.store.dispatch(.correctPressed)
-                    } label: {
-                        Text("Correct")
-                    }
+                    WrongButton()
                     Spacer()
-                    Button {
-                        self.store.dispatch(.wrongPressed)
-                    } label: {
-                        Text("Incorrect")
-                    }
+                    CorrectButton()
                     Spacer()
                 }
+                Spacer()
                 
             }
             .onReceive(store.state.timer, perform: { time in

@@ -10,6 +10,8 @@
 		9F7043DA29DC59D50041D054 /* GameEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043D929DC59D50041D054 /* GameEndedView.swift */; };
 		9F7043DC29DCE24B0041D054 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DB29DCE24B0041D054 /* AnswerView.swift */; };
 		9F7043DE29DDEC8B0041D054 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DD29DDEC8B0041D054 /* QuestionView.swift */; };
+		9F7043E029DE01170041D054 /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DF29DE01160041D054 /* CorrectButton.swift */; };
+		9F7043E229DE01220041D054 /* WrongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043E129DE01220041D054 /* WrongButton.swift */; };
 		9F9FCE7729DA1FA20014244E /* WordGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7629DA1FA20014244E /* WordGameApp.swift */; };
 		9F9FCE7929DA1FA20014244E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7829DA1FA20014244E /* ContentView.swift */; };
 		9F9FCE7B29DA1FA30014244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7A29DA1FA30014244E /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		9F7043D929DC59D50041D054 /* GameEndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndedView.swift; sourceTree = "<group>"; };
 		9F7043DB29DCE24B0041D054 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		9F7043DD29DDEC8B0041D054 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		9F7043DF29DE01160041D054 /* CorrectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectButton.swift; sourceTree = "<group>"; };
+		9F7043E129DE01220041D054 /* WrongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongButton.swift; sourceTree = "<group>"; };
 		9F9FCE7329DA1FA20014244E /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9FCE7629DA1FA20014244E /* WordGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameApp.swift; sourceTree = "<group>"; };
 		9F9FCE7829DA1FA20014244E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				9F7043D929DC59D50041D054 /* GameEndedView.swift */,
 				9F7043DB29DCE24B0041D054 /* AnswerView.swift */,
 				9F7043DD29DDEC8B0041D054 /* QuestionView.swift */,
+				9F7043DF29DE01160041D054 /* CorrectButton.swift */,
+				9F7043E129DE01220041D054 /* WrongButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,8 +351,10 @@
 				9F9FCEC329DB71140014244E /* Reducer.swift in Sources */,
 				9F9FCEB429DB60750014244E /* Word.swift in Sources */,
 				9F9FCEB629DB61710014244E /* WordsLoader.swift in Sources */,
+				9F7043E029DE01170041D054 /* CorrectButton.swift in Sources */,
 				9F9FCEC129DB70D70014244E /* Actions.swift in Sources */,
 				9F7043DA29DC59D50041D054 /* GameEndedView.swift in Sources */,
+				9F7043E229DE01220041D054 /* WrongButton.swift in Sources */,
 				9F9FCEBF29DB6F520014244E /* State.swift in Sources */,
 				9F9FCE7729DA1FA20014244E /* WordGameApp.swift in Sources */,
 				9F9FCEBA29DB65060014244E /* Round.swift in Sources */,

@@ -57,7 +57,6 @@ struct GameScreenView: View {
                 withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
                         store.dispatch(.startMovingAnswer)
                     }
-                    
                 } else {
                     store.dispatch(.noAnswer)
                 }

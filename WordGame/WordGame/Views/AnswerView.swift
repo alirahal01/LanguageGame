@@ -22,7 +22,9 @@ struct AnswerView: View {
                 if let round = store.state.currentRound {
                     Text(round.answer)
                         .font(.title)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .minimumScaleFactor(0.05)
                 }
                 
                 Spacer()
@@ -30,6 +32,7 @@ struct AnswerView: View {
         }
         .offset(x: store.state.moveAnswer ? 100 : -150)
         .shadow(radius: 8)
+        .frame(width: 150, height: 150)
         
     }
 }

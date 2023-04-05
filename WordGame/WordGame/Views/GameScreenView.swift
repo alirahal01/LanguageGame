@@ -16,53 +16,56 @@ extension AnyTransition {
 }
 struct GameScreenView: View {
     @EnvironmentObject var store: WordsGameStore
-//    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var screenSize: CGSize = .zero
     
     var body: some View {
-        VStack {
-            Group {
-                Text("Right Answers: \(store.state.gameResults.rightAnswers)")
-                Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
-                Text("No Answers: \(store.state.gameResults.noAnswers)")
-            }
-            .animation(nil)
-            
-            Spacer()
-            if let round = store.state.currentRound {
-                Text(round.question)
-                    .animation(nil)
-            }
-            Spacer()
-            AnswerView()
-            Spacer()
-            HStack {
+        GeometryReader { reader in
+            VStack {
+                Group {
+                    Text("Right Answers: \(store.state.gameResults.rightAnswers)")
+                    Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
+                    Text("No Answers: \(store.state.gameResults.noAnswers)")
+                }
+                .animation(nil)
+                
                 Spacer()
-                Button {
-                    self.store.dispatch(.correctPressed)
-                } label: {
-                    Text("Correct")
+                if let round = store.state.currentRound {
+                    Text(round.question)
+                        .animation(nil)
                 }
                 Spacer()
-                Button {
-                    self.store.dispatch(.wrongPressed)
-                } label: {
-                    Text("Incorrect")
-                }
+                AnswerView(screenSize: reader.size.width)
                 Spacer()
-            }
-            
-        }
-        .onReceive(store.state.timer, perform: { time in
-            if store.state.roundTimeRemaining > 0 {
-                withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
-                        store.dispatch(.startMovingAnswer)
+                HStack {
+                    Spacer()
+                    Button {
+                        self.store.dispatch(.correctPressed)
+                    } label: {
+                        Text("Correct")
                     }
-                } else {
-                    store.dispatch(.noAnswer)
+                    Spacer()
+                    Button {
+                        self.store.dispatch(.wrongPressed)
+                    } label: {
+                        Text("Incorrect")
+                    }
+                    Spacer()
                 }
-        })
-        .onAppear {
-            store.dispatch(.startGame)
+                
+            }
+            .onReceive(store.state.timer, perform: { time in
+                if store.state.roundTimeRemaining > 0 {
+                    withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
+                            store.dispatch(.startMovingAnswer)
+                        }
+                    } else {
+                        store.dispatch(.noAnswer)
+                    }
+            })
+            .onAppear {
+                print(reader.size)
+                store.dispatch(.startGame)
+        }
         }
     }
 }

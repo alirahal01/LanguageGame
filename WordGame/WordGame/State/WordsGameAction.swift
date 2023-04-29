@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WordsGameAction {
+enum WordsGameActions {
     case startGame
     case endGame
     case winGame
@@ -15,4 +15,5 @@ enum WordsGameAction {
     case wrongPressed
     case noAnswer
     case startMovingAnswer
+    case resetOffSetToZero
 }

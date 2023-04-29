@@ -12,6 +12,8 @@
 		9F7043DE29DDEC8B0041D054 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DD29DDEC8B0041D054 /* QuestionView.swift */; };
 		9F7043E029DE01170041D054 /* CorrectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DF29DE01160041D054 /* CorrectButton.swift */; };
 		9F7043E229DE01220041D054 /* WrongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043E129DE01220041D054 /* WrongButton.swift */; };
+		9F7043E429DE17510041D054 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043E329DE17510041D054 /* Middleware.swift */; };
+		9F7043E629DE17960041D054 /* GameLogicMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043E529DE17960041D054 /* GameLogicMiddleware.swift */; };
 		9F9FCE7729DA1FA20014244E /* WordGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7629DA1FA20014244E /* WordGameApp.swift */; };
 		9F9FCE7929DA1FA20014244E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7829DA1FA20014244E /* ContentView.swift */; };
 		9F9FCE7B29DA1FA30014244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9FCE7A29DA1FA30014244E /* Assets.xcassets */; };
@@ -26,9 +28,9 @@
 		9F9FCEB829DB64F10014244E /* RoundDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB729DB64F10014244E /* RoundDataProvider.swift */; };
 		9F9FCEBA29DB65060014244E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEB929DB65060014244E /* Round.swift */; };
 		9F9FCEBD29DB6F0F0014244E /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEBC29DB6F0F0014244E /* GameState.swift */; };
-		9F9FCEBF29DB6F520014244E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEBE29DB6F520014244E /* State.swift */; };
-		9F9FCEC129DB70D70014244E /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC029DB70D70014244E /* Actions.swift */; };
-		9F9FCEC329DB71140014244E /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC229DB71140014244E /* Reducer.swift */; };
+		9F9FCEBF29DB6F520014244E /* WordsGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEBE29DB6F520014244E /* WordsGameState.swift */; };
+		9F9FCEC129DB70D70014244E /* WordsGameAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC029DB70D70014244E /* WordsGameAction.swift */; };
+		9F9FCEC329DB71140014244E /* WordsGameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC229DB71140014244E /* WordsGameReducer.swift */; };
 		9F9FCEC529DB72C10014244E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC429DB72C10014244E /* Store.swift */; };
 		9F9FCEC829DB78090014244E /* GameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9FCEC729DB78090014244E /* GameScreenView.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		9F7043DD29DDEC8B0041D054 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		9F7043DF29DE01160041D054 /* CorrectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectButton.swift; sourceTree = "<group>"; };
 		9F7043E129DE01220041D054 /* WrongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongButton.swift; sourceTree = "<group>"; };
+		9F7043E329DE17510041D054 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		9F7043E529DE17960041D054 /* GameLogicMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicMiddleware.swift; sourceTree = "<group>"; };
 		9F9FCE7329DA1FA20014244E /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9FCE7629DA1FA20014244E /* WordGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameApp.swift; sourceTree = "<group>"; };
 		9F9FCE7829DA1FA20014244E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,9 +77,9 @@
 		9F9FCEB729DB64F10014244E /* RoundDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDataProvider.swift; sourceTree = "<group>"; };
 		9F9FCEB929DB65060014244E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		9F9FCEBC29DB6F0F0014244E /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		9F9FCEBE29DB6F520014244E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		9F9FCEC029DB70D70014244E /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		9F9FCEC229DB71140014244E /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		9F9FCEBE29DB6F520014244E /* WordsGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsGameState.swift; sourceTree = "<group>"; };
+		9F9FCEC029DB70D70014244E /* WordsGameAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsGameAction.swift; sourceTree = "<group>"; };
+		9F9FCEC229DB71140014244E /* WordsGameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsGameReducer.swift; sourceTree = "<group>"; };
 		9F9FCEC429DB72C10014244E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9F9FCEC729DB78090014244E /* GameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,10 +192,12 @@
 		9F9FCEBB29DB6EEE0014244E /* State */ = {
 			isa = PBXGroup;
 			children = (
-				9F9FCEBE29DB6F520014244E /* State.swift */,
-				9F9FCEC029DB70D70014244E /* Actions.swift */,
-				9F9FCEC229DB71140014244E /* Reducer.swift */,
+				9F9FCEBE29DB6F520014244E /* WordsGameState.swift */,
+				9F9FCEC029DB70D70014244E /* WordsGameAction.swift */,
+				9F9FCEC229DB71140014244E /* WordsGameReducer.swift */,
 				9F9FCEC429DB72C10014244E /* Store.swift */,
+				9F7043E329DE17510041D054 /* Middleware.swift */,
+				9F7043E529DE17960041D054 /* GameLogicMiddleware.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -341,21 +347,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7043E429DE17510041D054 /* Middleware.swift in Sources */,
 				9F7043DE29DDEC8B0041D054 /* QuestionView.swift in Sources */,
 				9F9FCEB829DB64F10014244E /* RoundDataProvider.swift in Sources */,
 				9F9FCEBD29DB6F0F0014244E /* GameState.swift in Sources */,
 				9F7043DC29DCE24B0041D054 /* AnswerView.swift in Sources */,
 				9F9FCE7929DA1FA20014244E /* ContentView.swift in Sources */,
+				9F7043E629DE17960041D054 /* GameLogicMiddleware.swift in Sources */,
 				9F9FCEC829DB78090014244E /* GameScreenView.swift in Sources */,
 				9F9FCEC529DB72C10014244E /* Store.swift in Sources */,
-				9F9FCEC329DB71140014244E /* Reducer.swift in Sources */,
+				9F9FCEC329DB71140014244E /* WordsGameReducer.swift in Sources */,
 				9F9FCEB429DB60750014244E /* Word.swift in Sources */,
 				9F9FCEB629DB61710014244E /* WordsLoader.swift in Sources */,
 				9F7043E029DE01170041D054 /* CorrectButton.swift in Sources */,
-				9F9FCEC129DB70D70014244E /* Actions.swift in Sources */,
+				9F9FCEC129DB70D70014244E /* WordsGameAction.swift in Sources */,
 				9F7043DA29DC59D50041D054 /* GameEndedView.swift in Sources */,
 				9F7043E229DE01220041D054 /* WrongButton.swift in Sources */,
-				9F9FCEBF29DB6F520014244E /* State.swift in Sources */,
+				9F9FCEBF29DB6F520014244E /* WordsGameState.swift in Sources */,
 				9F9FCE7729DA1FA20014244E /* WordGameApp.swift in Sources */,
 				9F9FCEBA29DB65060014244E /* Round.swift in Sources */,
 				9F9FCEB129DB60200014244E /* WordsParser.swift in Sources */,

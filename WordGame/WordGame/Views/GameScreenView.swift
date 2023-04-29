@@ -32,7 +32,7 @@ struct GameScreenView: View {
                 Spacer()
                 QuestionView()
                 Spacer()
-                AnswerView(screenSize: reader.size.width)
+                AnswerView(screenSize: reader.size.width, offset: 0)
                 Spacer()
                 HStack {
                     Spacer()
@@ -44,17 +44,7 @@ struct GameScreenView: View {
                 Spacer()
                 
             }
-            .onReceive(store.state.timer, perform: { time in
-                if store.state.roundTimeRemaining > 0 {
-                    withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
-                            store.dispatch(.startMovingAnswer)
-                        }
-                    } else {
-                        store.dispatch(.noAnswer)
-                    }
-            })
             .onAppear {
-                print(reader.size)
                 store.dispatch(.startGame)
         }
         }

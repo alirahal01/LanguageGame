@@ -14,7 +14,8 @@ struct WordGameApp: App {
             ContentView()
                 .environmentObject(WordsGameStore(
                     initial: WordsGameState(),
-                  reducer: wordsGameReducer
+                    reducer: wordsGameReducer,
+                    middlewares: [gameLogic]
                 ))
         }
     }

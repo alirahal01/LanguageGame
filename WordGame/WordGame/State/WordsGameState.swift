@@ -7,13 +7,15 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class WordsGameState {
     var gameState: GameState = .started
     var gameResults: GameResults = GameResults.empty
     var moveAnswer = false
     var rounds: Rounds = []
-    var roundsCount: Int = 20
+    @AppStorage("numberOfQuestions") private(set) var roundsCount = 10
+//    var roundsCount: Int = 20
     var currentRoundCount = 0
     var currentRound: Round? {
         if rounds.count > 0 && currentRoundCount < roundsCount {

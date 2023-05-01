@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6CAB5729FE10E300295214 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CAB5629FE10E300295214 /* SettingsView.swift */; };
+		9F6CAB5A29FE11F700295214 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CAB5929FE11F700295214 /* Appearance.swift */; };
+		9F6CAB5C29FE124200295214 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CAB5B29FE124200295214 /* LocalNotifications.swift */; };
+		9F6CAB5E29FE128300295214 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CAB5D29FE128300295214 /* Color+Extension.swift */; };
 		9F7043DA29DC59D50041D054 /* GameEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043D929DC59D50041D054 /* GameEndedView.swift */; };
 		9F7043DC29DCE24B0041D054 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DB29DCE24B0041D054 /* AnswerView.swift */; };
 		9F7043DE29DDEC8B0041D054 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7043DD29DDEC8B0041D054 /* QuestionView.swift */; };
@@ -53,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F6CAB5629FE10E300295214 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9F6CAB5929FE11F700295214 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		9F6CAB5B29FE124200295214 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		9F6CAB5D29FE128300295214 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		9F7043D929DC59D50041D054 /* GameEndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndedView.swift; sourceTree = "<group>"; };
 		9F7043DB29DCE24B0041D054 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		9F7043DD29DDEC8B0041D054 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -109,6 +117,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6CAB5529FE10CC00295214 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CAB5629FE10E300295214 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9F6CAB5829FE11EA00295214 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CAB5929FE11F700295214 /* Appearance.swift */,
+				9F6CAB5B29FE124200295214 /* LocalNotifications.swift */,
+				9F6CAB5D29FE128300295214 /* Color+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9F9FCE6A29DA1FA20014244E = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +158,8 @@
 		9F9FCE7529DA1FA20014244E /* WordGame */ = {
 			isa = PBXGroup;
 			children = (
+				9F6CAB5829FE11EA00295214 /* Utils */,
+				9F6CAB5529FE10CC00295214 /* Settings */,
 				9F9FCEC629DB74260014244E /* Views */,
 				9F9FCEBB29DB6EEE0014244E /* State */,
 				9F9FCEB229DB60350014244E /* Models */,
@@ -347,12 +375,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CAB5729FE10E300295214 /* SettingsView.swift in Sources */,
 				9F7043E429DE17510041D054 /* Middleware.swift in Sources */,
 				9F7043DE29DDEC8B0041D054 /* QuestionView.swift in Sources */,
 				9F9FCEB829DB64F10014244E /* RoundDataProvider.swift in Sources */,
 				9F9FCEBD29DB6F0F0014244E /* GameState.swift in Sources */,
 				9F7043DC29DCE24B0041D054 /* AnswerView.swift in Sources */,
 				9F9FCE7929DA1FA20014244E /* ContentView.swift in Sources */,
+				9F6CAB5E29FE128300295214 /* Color+Extension.swift in Sources */,
+				9F6CAB5A29FE11F700295214 /* Appearance.swift in Sources */,
+				9F6CAB5C29FE124200295214 /* LocalNotifications.swift in Sources */,
 				9F7043E629DE17960041D054 /* GameLogicMiddleware.swift in Sources */,
 				9F9FCEC829DB78090014244E /* GameScreenView.swift in Sources */,
 				9F9FCEC529DB72C10014244E /* Store.swift in Sources */,

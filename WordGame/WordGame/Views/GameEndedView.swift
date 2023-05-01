@@ -10,14 +10,17 @@ import SwiftUI
 struct GameEndedView: View {
     @EnvironmentObject var store: WordsGameStore
     var body: some View {
-        Text("Right Answers: \(store.state.gameResults.rightAnswers)")
-        Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
-        Text("No Answers: \(store.state.gameResults.noAnswers)")
-        Button {
-            store.dispatch(.startGame)
-        } label: {
-            Text("ok")
+        VStack {
+            Text("Right Answers: \(store.state.gameResults.rightAnswers)")
+            Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
+            Text("No Answers: \(store.state.gameResults.noAnswers)")
+            Button {
+                store.dispatch(.startGame)
+            } label: {
+                Text("ok")
+            }
         }
+        
 
     }
 }

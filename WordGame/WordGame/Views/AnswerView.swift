@@ -12,13 +12,14 @@ struct AnswerView: View {
     @EnvironmentObject var store: WordsGameStore
     @State var screenSize: CGFloat
     @State var offset: CGFloat
+    @AppStorage("answerCardBackgroundColor") var answerCardBackgroundColorInt: Int = 0xFF0000FF
     
     var body: some View {
         ZStack {
             GeometryReader { geometry in
                 ZStack {
                     Rectangle()
-                        .fill(Color.red)
+                        .fill(Color(rgba: answerCardBackgroundColorInt))
                         .frame(width: 150, height: 150)
                         .cornerRadius(12)
                     if let round = store.state.currentRound {

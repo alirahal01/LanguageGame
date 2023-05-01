@@ -9,10 +9,12 @@ import SwiftUI
 
 struct QuestionView: View {
     @EnvironmentObject var store: WordsGameStore
+    @AppStorage("questionCardBackgroundColor") var questionCardBackgroundColorInt: Int = 0xFF0000FF
+    
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(Color.red)
+                .fill(Color(rgba: questionCardBackgroundColorInt))
                 .frame(width: 150, height: 150)
                 .cornerRadius(12)
             if let round = store.state.currentRound {

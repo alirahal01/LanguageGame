@@ -15,7 +15,6 @@ class WordsGameState {
     var moveAnswer = false
     var rounds: Rounds = []
     @AppStorage("numberOfQuestions") private(set) var roundsCount = 10
-//    var roundsCount: Int = 20
     var currentRoundCount = 0
     var currentRound: Round? {
         if rounds.count > 0 && currentRoundCount < roundsCount {
@@ -25,7 +24,7 @@ class WordsGameState {
         }
     }
     
-    var roundTime: TimeInterval = 5
+    @AppStorage("roundTime") var roundTime = 5
     var roundTimeRemaining = 0
     
     @Published var stopAnimationAndGoBack = false

@@ -26,6 +26,7 @@ struct GameScreenView: View {
                     Text("Right Answers: \(store.state.gameResults.rightAnswers)")
                     Text("Wrong Answers: \(store.state.gameResults.wrongAnswers)")
                     Text("No Answers: \(store.state.gameResults.noAnswers)")
+                    Text("Round Time: \(store.state.roundTimeRemaining)")
                 }
                 .animation(nil)
                 

@@ -19,7 +19,7 @@ struct ContentView: View {
                     .tabItem({
                       VStack {
                           Image(systemName: "rectangle.dock")
-                        Text("Test")
+                        Text("Challenge")
                       }
                     })
                     .tag(0)
@@ -28,7 +28,7 @@ struct ContentView: View {
                     .tabItem({
                       VStack {
                           Image(systemName: "rectangle.dock")
-                        Text("Test")
+                        Text("Challenge")
                       }
                     })
                     .tag(0)

@@ -11,8 +11,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("numberOfQuestions") var numberOfQuestions = 6
+    @AppStorage("roundTime") var roundTime = 6
     @AppStorage("appearance") var appearance: Appearance = .automatic
-    @AppStorage("learningEnabled") var learningEnabled: Bool = true
     @AppStorage("dailyReminderEnabled") var dailyReminderEnabled = false
     @State var dailyReminderTime = Date(timeIntervalSince1970: 0)
     @AppStorage("dailyReminderTime") var dailyReminderTimeShadow: Double = 0
@@ -58,9 +58,15 @@ struct SettingsView: View {
                     Text("Any change will affect the next game")
                         .font(.caption2)
                         .foregroundColor(.secondary)
+                    Stepper(
+                        "Round Time: \(roundTime)",
+                        value: $roundTime,
+                        in: 0 ... 10
+                    )
+                    Text("Any change will affect the next game")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
                 }
-                
-                Toggle("Learning Enabled", isOn: $learningEnabled)
             }
             
             Section(header: Text("Notifications")) {

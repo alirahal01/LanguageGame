@@ -32,31 +32,29 @@ struct AnswerView: View {
                 }
                 .offset(x: offset)
                 .shadow(radius: 8)
-                .onChange(of: offset, perform: { newValue in
-                    if offset == 0 {
-                        self.store.dispatch(.startMovingAnswer)
-                    }
-                })
                 .onChange(of: store.state.roundTimeRemaining, perform: { newValue in
                     if store.state.stopAnimationAndGoBack {
-                        offset = 0
+                        withAnimation {
+                            offset = 0
+                        }
                     } else {
                         if store.state.moveAnswer {
                             withAnimation(.linear(duration: Double(store.state.roundTimeRemaining))) {
                                 offset = geometry.size.width - 150
                             }
                         } else {
-                            offset = 0
+                            withAnimation {
+                                offset = 0
+                            }
                         }
                     }
-                    
                 })
                 .onReceive(store.state.$stopAnimationAndGoBack, perform: { result in
                     if result { store.dispatch(.resetOffSetToZero) }
                 })
                 .onReceive(store.state.timer, perform: { time in
                     if store.state.roundTimeRemaining > 0 {
-                        if !store.state.stopAnimationAndGoBack {
+                        if !store.state.stopAnimationAndGoBack || offset == 0 {
                             store.dispatch(.startMovingAnswer)
                         }
                     } else {

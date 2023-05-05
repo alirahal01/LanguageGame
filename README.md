@@ -23,4 +23,11 @@ This screen has multiple functionalites
 
 ## Architecture
 
+The app uses a Unidirectional Data Flow Architecture (Redux).
+
 ![middleware](https://user-images.githubusercontent.com/26170395/236257422-ecfa75b7-dd44-421a-a995-338d4f7378dc.png)
+
+- A global state is used to ensure consistency across all Views being kept in Stores. 
+- Views can dispatch Actions which are interpreted into state changes by a reducer.
+- Reducers purpose is to return a new state based on a given action
+- Middleware is a component that sits between the action creator and the reducer. It intercepts actions that are dispatched by the views before they reach the reducer and it can perform additional processing on the action such as logging, modifying or removing.

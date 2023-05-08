@@ -1,13 +1,17 @@
 # Spanish Learning Gmae 
 
 ## Motivation:
-I want to make a project which exercies different domain know-how
+I want to make a project which exercies different domain know-how:
 - SwiftUI 
 - Animation
-- Basic Redux-Unidirectional architecture implementation 
+- Basic Redux-Unidirectional architecture implementation
+This project is considered a prerequisite  for the next project that will be done using the swift composable architecture (TCA)
 
 ## App Demo
-https://user-images.githubusercontent.com/26170395/236255645-15653892-6c32-401e-84e5-ead03029fd33.mov
+
+https://user-images.githubusercontent.com/26170395/236873114-a7ef07b9-f04c-4b50-91aa-cf92573f242a.mov
+
+
 
 ## Features
 The app has three screens
@@ -16,7 +20,6 @@ The app has three screens
 - Settings
 
 This screen has multiple functionalites
-
 - User can click on correct or wrong answer and the score will be updated 
 - If the round time has passed and user didnt chose any answer , no answers counter will be updated
 - User can update round count and nubmer of questions from the settings

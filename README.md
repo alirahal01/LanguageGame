@@ -1,4 +1,4 @@
-# Spanish Learning Gmae 
+# Spanish Learning Game 
 
 ## Motivation:
 I want to make a project which exercies different domain know-how:

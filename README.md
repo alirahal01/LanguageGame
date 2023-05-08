@@ -36,7 +36,7 @@ The app uses a Unidirectional Data Flow Architecture (Redux-like architecture).
 
 ## Device Support
 
-The only supported orientation is iPhone portrait
+The only supported orientation is portrait mode.
 
 
 ## References And Inspirations
